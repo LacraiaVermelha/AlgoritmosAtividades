@@ -19,6 +19,7 @@ NOME = 0; ATRIBUTO1 = 1; ATRIBUTO2 = 2; ATRIBUTO3 = 3
 NOMESATRIBUTOS = ["Nome", "Lógica", "Fé", "Idade"]
 ESCALASATRIBUTOS = ((0,100), (0, 100), (17,70))
 
+
 def menu_opcoes(pergunta, max):
     escolha = 0
     while escolha > max or escolha < 1:
@@ -40,7 +41,7 @@ def menu_principal():
 {"-"*35}
 
 ╭{('-'*35)}╮                          
-|{f'Bem-vindo ao alciTrunfo!':^35}|
+|{f'Bem-vindo ao AlciTrunfo!':^35}|
 |{f' ':^35}|
 |{f'Escolha um modo de jogo:':^35}|
 |{f'1 - Single Player ':^35}|
@@ -55,9 +56,11 @@ def menu_principal():
         case 3:
             continuar = False
 
+
 def plural_carta(mao):
     string = "carta" if len(mao) == 1 else "cartas"
     return string
+
 
 def embaralhar_maos(mao_1, mao_2, monte):
     ## Definindo variável impar
@@ -105,7 +108,7 @@ def jogada_player(mao_jogador, mao_oponente, monte):
         passar_cartas(mao_jogador, mao_oponente, monte, False)
         print(f'''┃{f'Você perdeu a batalha!':^35}┃
 ┃{f'Você está com {len(mao_jogador)} {plural_carta(mao_jogador)}':^35}┃
-┃{f'Seu oponente está com {len(mao_oponente)} {plural_carta(mao_oponente)}.':^35}┃''')
+┃{f'Seu oponente está com {len(mao_oponente)} {plural_carta(mao_oponente)}.':^35}┃'''))
     else:
         passar_cartas(mao_oponente, mao_jogador, monte, True)
         print(f'''┃{f'A batalha foi um empate!':^35}┃
